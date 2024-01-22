@@ -23,11 +23,8 @@ export default App
 
 const Container = styled.div`
     display: flex;
-    align: center;
-    margin-left: 0px;    
     height: 1080px;
-    border: 4px;
-    border-color: black;
+    width: 1800px;
     background: #EDEDED;
 `
 
@@ -41,7 +38,6 @@ const LeftContainer = styled.div`
   margin-left: 10px;
   margin-right: 10px;
   border-width: 4px;
-  border-color: black;
   background: #FFFFFF;
 `
 const RightContainer = styled.div`
