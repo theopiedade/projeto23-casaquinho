@@ -6,6 +6,7 @@ import SearchBar from './components/searchbar'
 import Temperature from './components/temperature'
 import SkyAndData from './components/skyanddata'
 import CityShow from './components/cityshow'
+import Blocks from './components/blocks'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <RightContainer>
         <RightMiddle>
           <CityShow/>
+          <Blocks/>
         </RightMiddle>
       </RightContainer>
     </Container>
