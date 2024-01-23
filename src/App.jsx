@@ -3,6 +3,7 @@ import Logo from './components/logo'
 import './App.css'
 import styled from 'styled-components'
 import SearchBar from './components/searchbar'
+import Temperature from './components/temperature'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <LeftContainer>
         <Logo/>
         <SearchBar/>
+        <Temperature/>
       </LeftContainer>
       <RightContainer/>
     </Container>

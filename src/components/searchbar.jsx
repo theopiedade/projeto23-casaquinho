@@ -63,7 +63,7 @@ const Container = styled.div`
       height: 30px;
       font-family: Montserrat;
       font-size: 30px;
-      font-weight: 500;
+      font-weight: 800;
       line-height: 24px;
       letter-spacing: 0em;
       text-align: left;
