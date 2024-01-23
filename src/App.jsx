@@ -4,6 +4,7 @@ import './App.css'
 import styled from 'styled-components'
 import SearchBar from './components/searchbar'
 import Temperature from './components/temperature'
+import SkyAndData from './components/skyanddata'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Logo/>
         <SearchBar/>
         <Temperature/>
+        <SkyAndData/>
       </LeftContainer>
       <RightContainer/>
     </Container>

@@ -3,14 +3,11 @@ import styled from "styled-components";
 export default function Temperature(temp){
 
     return(
-        <>
         <Container>
             <ion-icon name="ellipse-sharp"></ion-icon>
             <h1>31</h1>
             <h2>ºC</h2>
         </Container>
-        Teste
-        </>
     )
 }
 
