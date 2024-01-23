@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import SearchBar from './components/searchbar'
 import Temperature from './components/temperature'
 import SkyAndData from './components/skyanddata'
+import CityShow from './components/cityshow'
 
 
 function App() {
@@ -13,12 +14,18 @@ function App() {
   return (
     <Container>
       <LeftContainer>
-        <Logo/>
-        <SearchBar/>
-        <Temperature/>
-        <SkyAndData/>
+        <LeftMiddle>
+          <Logo/>
+          <SearchBar/>
+          <Temperature/>
+          <SkyAndData/>
+        </LeftMiddle>
       </LeftContainer>
-      <RightContainer/>
+      <RightContainer>
+        <RightMiddle>
+          <CityShow/>
+        </RightMiddle>
+      </RightContainer>
     </Container>
   )
 }
@@ -31,8 +38,12 @@ const Container = styled.div`
     width: 1800px;
     background: #EDEDED;
 `
-
 const LeftContainer = styled.div`
+  display: flex;
+  width: 650px;
+  background: #FFFFFF;
+`
+const LeftMiddle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,8 +55,14 @@ const LeftContainer = styled.div`
   border-width: 4px;
   background: #FFFFFF;
 `
+
 const RightContainer = styled.div`
   display: flex;
   width: 1258px;
-  background: #D8D8D8;
+  background: #EFEFEF;
+`
+
+const RightMiddle = styled.div`
+  margin-top: 52px;
+  margin-left: 50px;
 `
