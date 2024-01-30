@@ -8,23 +8,27 @@ import { useState } from "react"
 export default function SearchBar({setWeather}){
     const [city, setCity] = useState("")
 
+     useEffect(() => {
     function searchCity({e}) {
         e.preventDefault()
 
         const url = import.meta.env.VITE_API_URL;
         const key = import.meta.env.VITE_API_KEY;
         const getURL = `${url}?q=${city}&appid=${key}`
-          
+        
+       
+
         const promise = axios.get(getURL)
         promise.then((res) => {
                 setWeather(res.data)
-                alert(res.data)
             })
         promise.catch((err) => {
                 alert("Erro: "+err.msg)
             })
- 
+
+
     }
+    }, [])
 
     return(
         <Container>
