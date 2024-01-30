@@ -17,27 +17,23 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-    margin-top: 75px;
+    margin-top: 20%;
     width: 550px;
     height: 120px;
     ion-icon {
-        font-size: 90px;
+        font-size: 400%;
         color: #EC6E4C;
-        margin-right: 30px;
+        margin-right: 3%;
     }
     h1 {
         font-family: Poppins;
-        font-size: 150px;
-        font-weight: 150;
-        line-height: 48px;
+        font-size: 900%;
         color: #EC6E4C;
     }
     h2 {
-        margin-bottom: 40px;
+        margin-bottom: 5%;
         font-family: Poppins;
-        font-size: 120px;
-        font-weight: 300;
-        line-height: 48px;
+        font-size: 600%;
         letter-spacing: 0em;
         text-align: left;
         color: #EC6E4C;      

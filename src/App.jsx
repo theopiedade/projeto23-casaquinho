@@ -35,36 +35,44 @@ function App() {
 export default App
 
 const Container = styled.div`
+    margin-top: 1%;
     display: flex;
-    height: 1080px;
-    width: 1800px;
+    height: 100%;
+    width: 100%;
     background: #EDEDED;
 `
 const LeftContainer = styled.div`
   display: flex;
-  width: 650px;
+  width: 35%;
   background: #FFFFFF;
 `
 const LeftMiddle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 650px;
-  height: 717px;
-  margin-top: 176px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-width: 4px;
+  width: 85%;
+  height: 68%;
+  margin-top: 16%;
+  margin-left: 8%;
+  margin-right: 8%;
   background: #FFFFFF;
 `
 
 const RightContainer = styled.div`
   display: flex;
-  width: 1258px;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 66%;
+  height: 100%;
   background: #EFEFEF;
 `
 
 const RightMiddle = styled.div`
-  margin-top: 52px;
-  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 70%;
+  height: 100%;
 `

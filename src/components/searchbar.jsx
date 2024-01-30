@@ -9,7 +9,7 @@ export default function SearchBar(){
     function searchCity(e) {
         e.preventDefault()
 
-        alert("Busca: "+form);
+        alert("Busca: "+city);
 
         /*
         axios.post(`${process.env.REACT_APP_API_URL}/search`, form)
@@ -31,7 +31,7 @@ export default function SearchBar(){
             <input 
                 placeholder="Procure por uma cidade" 
                 type="text"
-                value={form}
+                value={city}
                 onChange={(e) => setForm(e.target.value)} required
             />
             </form>
@@ -43,29 +43,26 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
 
-    width: 500px;
-    height: 80px;
-    margin-top: 50px;
+    width: 100%;
+    height: 10%;
+    margin-top: 10%;
+    margin-right: 20%;
     
     background: #EDEDEF;
     border-radius: 24px;
     box-shadow: 0px 24px 48px 0px #314F7C14;
     img {
-        width: 37px;
-        height: 40px;
-        border-radius: 16px;        
+        width: 10%;
+        height: 50%;    
     }
     input {
-      width: 302px;
-      height: 30px;
+      width: 90%;
+      height: 30%;
       font-family: Montserrat;
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 24px;
-      letter-spacing: 0em;
+      font-size: 130%;
       text-align: left;
       background: #EDEDEF;
       color: #424243;

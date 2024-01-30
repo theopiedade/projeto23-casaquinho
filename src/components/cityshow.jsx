@@ -23,7 +23,7 @@ const Container = styled.div`
         margin-bottom: 14px;
         color: #222;
         font-family: Poppins;
-        font-size: 100px;
+        font-size: 600%;
         font-style: normal;
         font-weight: 400;
         line-height: 48px;

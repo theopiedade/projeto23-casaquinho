@@ -16,20 +16,19 @@ const Container = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 550px;
-    height: 120px;
+    width: 90%;
+    height: 70%;
     img {
-        width: 100px;
-        height: 100px;
-        margin:0px;
+        width: 60%;
+        height: 60%;
     }
     h1 {
-        height: 96px
+        margin-left: 3%; 
+        margin-right: 40%;
         word-wrap: break-word;
         font-family: Poppins;
-        font-size: 60px;
-        font-weight: 600;
-        line-height: 48px;
+        font-size: 400%;
+        font-weight: 600%;
         text-align: left;
     }    
 `

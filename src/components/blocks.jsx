@@ -25,7 +25,7 @@ export default function Blocks(){
 }
 
 const Container = styled.div`
-    margin-top: 35px;
+    margin-top: 3%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -34,32 +34,29 @@ const Container = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-right: 32px;
+        margin-right: 3%;
         
-        width: 250px;
-        height: 120px;
+        width: 30%;
+        height: 100%;
         flex-shrink: 0;
-        border-radius: 32px;
+        border-radius: 10%;
         background: linear-gradient(117deg, #4D4494 22.83%, #4F43AE 90.03%);
-        box-shadow: 0px 24px 48px 0px rgba(49, 79, 124, 0.08);
+        box-shadow: 0px 20% 40% 0px rgba(49, 79, 124, 0.08);
 
         h1 {
+            margin-top: 5%;
             color: #FFF;
             font-family: Poppins;
-            font-size: 22px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 24px; 
+            font-size: 100%;
         }
 
         h2 {
-            margin-top: 8px;
+            margin-top: 3%;
             color: #FFF;
             font-family: Poppins;
-            font-size: 48px;
+            font-size: 300%;
             font-style: normal;
-            font-weight: 600;
-            line-height: 36px; /* 75% */
+            font-weight: 100%;
         }
     }
 `
