@@ -1,13 +1,27 @@
 import styled from "styled-components";
+import dayjs from "dayjs";
+
+const weekDays=[
+    "Domingo", 
+    "Segunda-Feira",
+    "Terça-Feira",
+    "Quarta-Feira",
+    "Quinta-Feira",
+    "Sexta-Feira",
+    "Sábado"
+]
 
 export default function SkyAndData(description){
 
+    const data = dayjs(Date()).format('DD/MM/YYYY');
+    const day = weekDays[dayjs().day()];
+ 
     return(
         <Container>
             <h1>Céu aberto</h1>
             <h2></h2>
-            <h3>16/11/2023</h3>
-            <h3>Quinta-Feira</h3>
+            <h3>{data}</h3>
+            <h3>{day}</h3>
         </Container>
     )
 }

@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-export default function CityShow(description){
+export default function CityShow({city}){
 
     return(
         <Container>
             <h2>Previsão do tempo para...</h2>
-            <h1>São Paulo</h1>
-            <p>
+            <h1>{city}</h1>
+            <div>
                 <h3>Latitude: 44.4°</h3>
                 <h3>Longitude: 10.99°</h3>
-            </p>
+            </div>
         </Container>
     )
 }
@@ -36,7 +36,7 @@ const Container = styled.div`
         font-weight: 400;
         line-height: 48px;
     }
-    p {
+    div {
         display: flex;
     }
     h3 {

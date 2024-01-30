@@ -1,35 +1,29 @@
 import styled from "styled-components";
 import search from '../assets/search.svg'
+import axios from "axios";
 import { useState } from "react"
 
 
 
-export default function SearchBar(){
-
-
+export default function SearchBar({setWeather}){
     const [city, setCity] = useState("")
 
-    function searchCity(e) {
+    function searchCity({e}) {
         e.preventDefault()
 
-
-        console.log(process.env.API_URL)
-
-        //let post = `${process.env.API_URL}?q=${city}&appid=${process.env.API_KEY}`
-        alert("Busca: "+city);
-        
-     
-        /*
-        axios.post(post)
-            .then(() => {
-
-                navigate("/timeline")
+        const url = import.meta.env.VITE_API_URL;
+        const key = import.meta.env.VITE_API_KEY;
+        const getURL = `${url}?q=${city}&appid=${key}`
+          
+        const promise = axios.get(getURL)
+        promise.then((res) => {
+                setWeather(res.data)
+                alert(res.data)
             })
-            .catch((err) => {
-
-                alert("Houve um erro ao publicar seu link")
+        promise.catch((err) => {
+                alert("Erro: "+err.msg)
             })
-        */
+ 
     }
 
     return(

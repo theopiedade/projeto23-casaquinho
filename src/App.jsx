@@ -6,23 +6,26 @@ import Temperature from './components/temperature'
 import SkyAndData from './components/skyanddata'
 import CityShow from './components/cityshow'
 import Blocks from './components/blocks'
+import { useState } from "react"
 
 
 function App() {
+
+  const [weather, setWeather] = useState([]);
 
   return (
     <Container>
       <LeftContainer>
         <LeftMiddle>
           <Logo/>
-          <SearchBar/>
-          <Temperature/>
+          <SearchBar setWeather={setWeather}/>
+          <Temperature weather={weather}/>
           <SkyAndData/>
         </LeftMiddle>
       </LeftContainer>
       <RightContainer>
         <RightMiddle>
-          <CityShow/>
+          <CityShow weather={weather}/>
           <Blocks/>
         </RightMiddle>
       </RightContainer>

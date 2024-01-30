@@ -4,22 +4,22 @@ export default function Blocks(){
 
     return(
         <Container>
-           <box>
-                <h1>Mínima</h1>
-                <h2>24ºC</h2>
-           </box>
-           <box>
-                <h1>Máxima</h1>
-                <h2>37ºC</h2>
-           </box>
-           <box>
-                <h1>Umidade</h1>
-                <h2>65%</h2>
-           </box>
-           <box>
-                <h1>Vento</h1>
-                <h2>12 m/s</h2>
-           </box>
+           <div>
+                <h2>Mínima</h2>
+                <h3>24ºC</h3>
+           </div>
+           <div>
+                <h2>Máxima</h2>
+                <h3>37ºC</h3>
+           </div>
+           <div>
+                <h2>Umidade</h2>
+                <h3>65%</h3>
+           </div>
+           <div>
+                <h2>Vento</h2>
+                <h3>12 m/s</h3>
+           </div>
         </Container>
     )
 }
@@ -29,7 +29,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    box {
+    div {
         display:flex;
         flex-direction: column;
         align-items: center;
@@ -43,14 +43,14 @@ const Container = styled.div`
         background: linear-gradient(117deg, #4D4494 22.83%, #4F43AE 90.03%);
         box-shadow: 0px 20% 40% 0px rgba(49, 79, 124, 0.08);
 
-        h1 {
+        h2 {
             margin-top: 5%;
             color: #FFF;
             font-family: Poppins;
             font-size: 100%;
         }
 
-        h2 {
+        h3 {
             margin-top: 3%;
             color: #FFF;
             font-family: Poppins;
