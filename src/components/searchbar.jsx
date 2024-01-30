@@ -2,17 +2,25 @@ import styled from "styled-components";
 import search from '../assets/search.svg'
 import { useState } from "react"
 
+
+
 export default function SearchBar(){
 
-    const [form, setForm] = useState("")
+
+    const [city, setCity] = useState("")
 
     function searchCity(e) {
         e.preventDefault()
 
-        alert("Busca: "+city);
 
+        console.log(process.env.API_URL)
+
+        //let post = `${process.env.API_URL}?q=${city}&appid=${process.env.API_KEY}`
+        alert("Busca: "+city);
+        
+     
         /*
-        axios.post(`${process.env.REACT_APP_API_URL}/search`, form)
+        axios.post(post)
             .then(() => {
 
                 navigate("/timeline")
@@ -32,7 +40,7 @@ export default function SearchBar(){
                 placeholder="Procure por uma cidade" 
                 type="text"
                 value={city}
-                onChange={(e) => setForm(e.target.value)} required
+                onChange={(e) => setCity(e.target.value)} required
             />
             </form>
         </Container>

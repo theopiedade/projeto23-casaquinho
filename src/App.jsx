@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Logo from './components/logo'
 import './App.css'
 import styled from 'styled-components'
@@ -10,7 +9,6 @@ import Blocks from './components/blocks'
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <Container>
