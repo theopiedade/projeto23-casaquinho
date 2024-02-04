@@ -22,32 +22,39 @@ const skyData=[
 ]
 
 
-export default function SkyAndData({weather}){
+export default function TemperatureAndSky({weather}){
     
-   
-    function skyCheck() {
-        const main = weather.weather.map(item => item.main)
-        return skyData.find((sky === main))
-    }
+    let ceu = ""
+    let temperature = ""
 
-    if (weather.length > 0) {
-        console.log(weather.weather.map(item => item.main))
+    if (weather.length != 0) {
+        const check = weather.weather[0].main;
+        ceu = skyData.find(({ sky }) => sky === check).ceu;
+        temperature = Math.floor(weather.main.temp - 273.15);
     }
 
     const data = dayjs(Date()).format('DD/MM/YYYY');
     const day = weekDays[dayjs().day()];
  
     return(
-        <Container>
-            <h1>Céu Aberto</h1>
+        <>
+        <ContainerTemp>
+            <ion-icon name="ellipse-sharp"></ion-icon>
+            <h1>{temperature}</h1>
+            <h2>ºC</h2>
+        </ContainerTemp>
+
+        <ContainerSky>
+            <h1>{ceu}</h1>
             <h2></h2>
             <h3>{data}</h3>
             <h3>{day}</h3>
-        </Container>
+        </ContainerSky>
+        </>
     )
 }
 
-const Container = styled.div`
+const ContainerSky = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,4 +83,32 @@ const Container = styled.div`
         text-align: left;
         color: #222222;
     }
+`
+const ContainerTemp = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20%;
+    width: 550px;
+    height: 120px;
+    ion-icon {
+        font-size: 400%;
+        color: #EC6E4C;
+        margin-right: 3%;
+    }
+    h1 {
+        font-family: Poppins;
+        font-size: 900%;
+        color: #EC6E4C;
+    }
+    h2 {
+        margin-bottom: 5%;
+        font-family: Poppins;
+        font-size: 600%;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #EC6E4C;      
+    }    
 `

@@ -2,11 +2,10 @@ import Logo from './components/logo'
 import './App.css'
 import styled from 'styled-components'
 import SearchBar from './components/searchbar'
-import Temperature from './components/temperature'
-import SkyAndData from './components/skyanddata'
 import CityShow from './components/cityshow'
 import Blocks from './components/blocks'
 import { useState } from "react"
+import TemperatureAndSky from './components/temperaturesky'
 
 
 function App() {
@@ -19,8 +18,7 @@ function App() {
         <LeftMiddle>
           <Logo/>
           <SearchBar setWeather={setWeather}/>
-          <Temperature weather={weather}/>
-          <SkyAndData weather={weather}/>
+          <TemperatureAndSky weather={weather}/>
         </LeftMiddle>
       </LeftContainer>
       <RightContainer>

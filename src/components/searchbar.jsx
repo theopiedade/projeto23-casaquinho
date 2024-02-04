@@ -19,7 +19,6 @@ export default function SearchBar({setWeather}){
             const getURL = `${url}?q=${city}&appid=${key}`
             const promise = axios.get(getURL)
             promise.then((res) => {
-                console.log("Passou get = "+getURL) 
                 setWeather(res.data)
                 })
             promise.catch((err) => {
