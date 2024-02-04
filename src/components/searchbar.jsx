@@ -9,27 +9,22 @@ export default function SearchBar({setWeather}){
     const [city, setCity] = useState("")
 
     
-    function searchCity({e}) {
+    function searchCity(event) {
         if (!city) alert("Preencha o nome da cidade")
         else { 
-            e.preventDefault()
+            event.preventDefault();
 
             const url = import.meta.env.VITE_API_URL;
             const key = import.meta.env.VITE_API_KEY;
             const getURL = `${url}?q=${city}&appid=${key}`
-            alert("Passou: "+getURL);
- 
-           console.log("Entrou no useEffect");
-        /*
-        const promise = axios.get(getURL)
-        promise.then((res) => {
-            console.log("Passou get = "+getURL) 
-            //setWeather(res.data)
-            })
-        promise.catch((err) => {
-                alert("Erro: "+err.msg)
-            })
-        */
+            const promise = axios.get(getURL)
+            promise.then((res) => {
+                console.log("Passou get = "+getURL) 
+                setWeather(res.data)
+                })
+            promise.catch((err) => {
+                    alert("Erro: "+err.msg)
+                })
         }
 
     }

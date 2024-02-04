@@ -1,14 +1,23 @@
 import styled from "styled-components";
 
-export default function CityShow({city}){
+export default function CityShow({weather}){
 
+    let name = ""
+    let lat = ""
+    let lon = ""
+
+    if (weather.coord) {
+        name = weather.name
+        lat = weather.coord.lat.toFixed(2)+'º'
+        lon = weather.coord.lon.toFixed(2)+'º'
+    }
     return(
         <Container>
             <h2>Previsão do tempo para...</h2>
-            <h1>{city}</h1>
+            <h1>{name}</h1>
             <div>
-                <h3>Latitude: 44.4°</h3>
-                <h3>Longitude: 10.99°</h3>
+                <h3>Latitude: { lat }</h3>
+                <h3>Longitude: { lon }</h3>
             </div>
         </Container>
     )

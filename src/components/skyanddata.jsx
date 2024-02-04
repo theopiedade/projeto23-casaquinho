@@ -11,14 +11,35 @@ const weekDays=[
     "Sábado"
 ]
 
-export default function SkyAndData(description){
+const skyData=[
+    { sky:"Clear", ceu:"Céu aberto", color:"orange" },
+    { sky:"Clouds", ceu:"Nublado", color:"grey" },
+    { sky:"Rain", ceu:"Chovendo", color:"blue"},
+    { sky:"Snow", ceu:"Nevando", color:"lightgray"},
+    { sky:"Thunderstorm", ceu:"Tempestade", color:"purple"},
+    { sky:"Drizzle", ceu:"Chuviscando", color:"lightblue"},
+    { sky:"Mist", ceu:"Neblina", color:"lightgray" }
+]
+
+
+export default function SkyAndData({weather}){
+    
+   
+    function skyCheck() {
+        const main = weather.weather.map(item => item.main)
+        return skyData.find((sky === main))
+    }
+
+    if (weather.length > 0) {
+        console.log(weather.weather.map(item => item.main))
+    }
 
     const data = dayjs(Date()).format('DD/MM/YYYY');
     const day = weekDays[dayjs().day()];
  
     return(
         <Container>
-            <h1>Céu aberto</h1>
+            <h1>Céu Aberto</h1>
             <h2></h2>
             <h3>{data}</h3>
             <h3>{day}</h3>
