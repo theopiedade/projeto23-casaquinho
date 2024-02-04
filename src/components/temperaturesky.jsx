@@ -26,21 +26,24 @@ export default function TemperatureAndSky({weather}){
     
     let ceu = ""
     let temperature = ""
+    let color = ""
 
     if (weather.length != 0) {
         const check = weather.weather[0].main;
-        ceu = skyData.find(({ sky }) => sky === check).ceu;
+        const sky = skyData.find(({ sky }) => sky === check)
+        ceu = sky.ceu;
         temperature = Math.floor(weather.main.temp - 273.15);
+        color = sky.color;
     }
-
+  
     const data = dayjs(Date()).format('DD/MM/YYYY');
     const day = weekDays[dayjs().day()];
  
     return(
         <>
         <ContainerTemp>
-            <ion-icon name="ellipse-sharp"></ion-icon>
-            <h1>{temperature}</h1>
+            <ion-icon name="ellipse-sharp" color={color}></ion-icon>
+            <h1 color={color}>{temperature}</h1>
             <h2>ºC</h2>
         </ContainerTemp>
 
@@ -95,20 +98,19 @@ const ContainerTemp = styled.div`
     height: 120px;
     ion-icon {
         font-size: 400%;
-        color: #EC6E4C;
+        color: ${props => (props.color)};
         margin-right: 3%;
     }
     h1 {
         font-family: Poppins;
         font-size: 900%;
-        color: #EC6E4C;
-    }
+        color: ${props => (props.color)};
     h2 {
         margin-bottom: 5%;
         font-family: Poppins;
         font-size: 600%;
         letter-spacing: 0em;
         text-align: left;
-        color: #EC6E4C;      
+        color: ${props => (props.color)};     
     }    
 `
