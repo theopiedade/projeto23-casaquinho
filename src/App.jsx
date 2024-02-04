@@ -19,13 +19,13 @@ function App() {
         <LeftMiddle>
           <Logo/>
           <SearchBar setWeather={setWeather}/>
-          <Temperature weather={weather}/>
+          <Temperature/>
           <SkyAndData/>
         </LeftMiddle>
       </LeftContainer>
       <RightContainer>
         <RightMiddle>
-          <CityShow weather={weather}/>
+          <CityShow/>
           <Blocks/>
         </RightMiddle>
       </RightContainer>

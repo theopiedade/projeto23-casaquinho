@@ -1,34 +1,39 @@
 import styled from "styled-components";
 import search from '../assets/search.svg'
 import axios from "axios";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 
 export default function SearchBar({setWeather}){
     const [city, setCity] = useState("")
 
-     useEffect(() => {
+    
     function searchCity({e}) {
-        e.preventDefault()
+        if (!city) alert("Preencha o nome da cidade")
+        else { 
+            e.preventDefault()
 
-        const url = import.meta.env.VITE_API_URL;
-        const key = import.meta.env.VITE_API_KEY;
-        const getURL = `${url}?q=${city}&appid=${key}`
-        
-       
-
+            const url = import.meta.env.VITE_API_URL;
+            const key = import.meta.env.VITE_API_KEY;
+            const getURL = `${url}?q=${city}&appid=${key}`
+            alert("Passou: "+getURL);
+ 
+           console.log("Entrou no useEffect");
+        /*
         const promise = axios.get(getURL)
         promise.then((res) => {
-                setWeather(res.data)
+            console.log("Passou get = "+getURL) 
+            //setWeather(res.data)
             })
         promise.catch((err) => {
                 alert("Erro: "+err.msg)
             })
-
+        */
+        }
 
     }
-    }, [])
+    
 
     return(
         <Container>
@@ -38,7 +43,7 @@ export default function SearchBar({setWeather}){
                 placeholder="Procure por uma cidade" 
                 type="text"
                 value={city}
-                onChange={(e) => setCity(e.target.value)} required
+                onChange={e => setCity(e.target.value)} 
             />
             </form>
         </Container>
