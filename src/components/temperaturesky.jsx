@@ -30,10 +30,10 @@ export default function TemperatureAndSky({weather}){
 
     if (weather.length != 0) {
         const check = weather.weather[0].main;
-        const sky = skyData.find(({ sky }) => sky === check)
-        ceu = sky.ceu;
+        const data = skyData.find(({ sky }) => sky === check)
+        ceu = data.ceu;
+        color = data.color;
         temperature = Math.floor(weather.main.temp - 273.15);
-        color = sky.color;
     }
   
     const data = dayjs(Date()).format('DD/MM/YYYY');
@@ -41,10 +41,10 @@ export default function TemperatureAndSky({weather}){
  
     return(
         <>
-        <ContainerTemp>
-            <ion-icon name="ellipse-sharp" color={color}></ion-icon>
-            <h1 color={color}>{temperature}</h1>
-            <h2>ºC</h2>
+        <ContainerTemp color={color} >
+            <ion-icon name="ellipse-sharp"></ion-icon>
+            <h1>{temperature}</h1>
+            <p>ºC</p>
         </ContainerTemp>
 
         <ContainerSky>
@@ -57,60 +57,52 @@ export default function TemperatureAndSky({weather}){
     )
 }
 
-const ContainerSky = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 75px;
-    h1 {
-        font-family: Poppins;
-        font-size: 32px;
-        font-weight: 400;
-        line-height: 48px;
-        letter-spacing: 0em;
-        color: #222222;
-    }
-    h2 {
-        margin-top: 35px;
-        margin-bottom: 35px;
-        width: 395px;
-        border: 3px solid #EDEDED;
-    }
-    h3 {
-        font-family: Poppins;
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 27px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #222222;
-    }
-`
 const ContainerTemp = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
+    font-family: Poppins;
     margin-top: 20%;
-    width: 550px;
-    height: 120px;
+    width: 100%;
+    height: 100%;
     ion-icon {
         font-size: 400%;
         color: ${props => (props.color)};
         margin-right: 3%;
     }
+    p {
+        font-size: 400%;
+        color: ${props => (props.color)};
+        margin-bottom: 10%;     
+    }   
     h1 {
-        font-family: Poppins;
         font-size: 900%;
         color: ${props => (props.color)};
-    h2 {
-        margin-bottom: 5%;
-        font-family: Poppins;
-        font-size: 600%;
+ 
+`
+
+
+const ContainerSky = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    font-family: Poppins;
+    h1 {
+        font-size: 32px;
         letter-spacing: 0em;
-        text-align: left;
-        color: ${props => (props.color)};     
-    }    
+        color: #222222;
+    }
+    h2 {
+        margin-top: 30%;
+        margin-bottom: 30%;
+        width: 210%;
+        border: 3px solid #EDEDED;
+    }
+    h3 {
+        font-size: 180%;
+        color: #222222;
+    }
 `
