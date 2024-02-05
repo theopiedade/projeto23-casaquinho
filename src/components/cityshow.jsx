@@ -36,22 +36,15 @@ const Container = styled.div`
     }
     h2 {
         color: #222;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 48px;
+        font-size: 300%;
     }
     div {
         display: flex;
         margin-top:5%;
     }
     h3 {
-        margin-right: 25px;
+        margin-right: 5%;
         color: #222;
-        font-family: Poppins;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 48px;
+        font-size: 150%;
     }
 `

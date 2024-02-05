@@ -8,6 +8,7 @@ export default function BlocksAndMessage({weather}){
     let humidity = ""
     let wind = ""
     let msg = ""
+    let color = ""
 
     if (weather.coord) {
         temp = Math.floor(weather.main.temp - 273.15)
@@ -16,10 +17,14 @@ export default function BlocksAndMessage({weather}){
         humidity = weather.main.humidity
         wind = Math.floor(weather.wind.speed)
 
-        if (temp < 17 || temp_min < 17 || temp_max < 17) 
-        msg = "Você deve levar um casaquinho"
-        else msg = "Não, você não deve levar um casaquinho"
-    
+        if (temp < 17 || temp_min < 17 || temp_max < 17) {
+            msg = "Você deve levar um casaquinho"
+            color = "blue";
+        } 
+        else {
+            msg = "Não, você não deve levar um casaquinho"
+            color = "grey";
+        }
     }
 
     return(
@@ -42,7 +47,7 @@ export default function BlocksAndMessage({weather}){
                 <h3>{wind}m/s</h3>
            </div>
          </Container>
-        <Message>
+        <Message color={color}>
          <p>{msg}</p>
         </Message>
         </>
@@ -91,5 +96,6 @@ const Message = styled.div`
         font-size: 200%;
         font-style: italic;
         line-height: 5%;
+        color: ${props => (props.color)};
     }
 `
