@@ -27,19 +27,15 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    font-family: Poppins;
     h1 {
-        margin-top: 10px;
-        margin-bottom: 14px;
+        margin-top: 2%;
+        margin-bottom: 2%;
         color: #222;
-        font-family: Poppins;
         font-size: 600%;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 48px;
     }
     h2 {
         color: #222;
-        font-family: Poppins;
         font-size: 32px;
         font-style: normal;
         font-weight: 400;
@@ -47,6 +43,7 @@ const Container = styled.div`
     }
     div {
         display: flex;
+        margin-top:5%;
     }
     h3 {
         margin-right: 25px;

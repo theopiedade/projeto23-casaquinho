@@ -3,9 +3,9 @@ import './App.css'
 import styled from 'styled-components'
 import SearchBar from './components/searchbar'
 import CityShow from './components/cityshow'
-import Blocks from './components/blocks'
 import { useState } from "react"
 import TemperatureAndSky from './components/temperaturesky'
+import BlocksAndMessage from './components/blocksandmessage'
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
       <RightContainer>
         <RightMiddle>
           <CityShow weather={weather}/>
-          <Blocks weather={weather}/>
+          <BlocksAndMessage weather={weather}/>
         </RightMiddle>
       </RightContainer>
     </Container>
